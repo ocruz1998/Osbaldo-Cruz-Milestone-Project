@@ -1,57 +1,47 @@
-// Accessing HTML elements
-const questionElement = document.getElementById('question');
-const choicesElement = document.getElementById('choices');
-const submitButton = document.getElementById('submit');
-const resultElement = document.getElementById('result');
+let questionIndex = 0; // Index to track the current question
 
-// Get the current question index
-let currentQuestion = 0;
-let score = 0;
-
-// Function to display question and answer choices
 function displayQuestion() {
-    questionElement.textContent = quizQuestions[currentQuestion].question;
-    choicesElement.innerHTML = "";
-    quizQuestions[currentQuestion].choices.forEach((choice, index) => {
-        const button = document.createElement('button');
-        button.textContent = choice;
-        button.addEventListener('click', () => checkAnswer(choice));
-        choicesElement.appendChild(button);
+    const currentQuestion = questions[questionIndex];
+    
+    // Display the question
+    document.getElementById('question').textContent = currentQuestion.question;
+    
+    // Display answer choices
+    const choiceButtons = document.querySelectorAll('.choice');
+    choiceButtons.forEach((button, index) => {
+        button.textContent = currentQuestion.choices[index];
     });
 }
 
-// Function to check the selected answer
-function checkAnswer(selectedAnswer) {
-    if (selectedAnswer === quizQuestions[currentQuestion].correctAnswer) {
-        score++;
-    }
-    currentQuestion++;
-    if (currentQuestion < quizQuestions.length) {
-        displayQuestion();
-    } else {
-        displayResult();
-    }
-}
+// Call the displayQuestion function when the page loads
+document.addEventListener('DOMContentLoaded', function() {
+    displayQuestion();
+});
 
-// Function to display the final result
-function displayResult() {
-    questionElement.textContent = "";
-    choicesElement.innerHTML = "";
-    submitButton.style.display = "none";
-    resultElement.textContent = `You scored ${score} out of ${quizQuestions.length} questions. Well done!`;
-}
+const choices = document.querySelectorAll('.choice');
 
-// Start the quiz by displaying the first question
-displayQuestion();
+choices.forEach((choice, index) => {
+    choice.addEventListener('click', function() {
+        const selectedAnswer = choice.textContent;
+        const correctAnswer = questions[index].correctAnswer;
 
+        if (selectedAnswer === correctAnswer) {
+            alert('Correct answer!');
+        } else {
+            alert('Incorrect answer. The correct answer is: ' + correctAnswer);
+        }
+    });
+});
 
-
+document.getElementById('submit').addEventListener('click', function() {
+    // This is where you can handle the submission of answers
+    alert('Answers submitted');
+});
 
 
 
-
-//Quiz q&a
-const quizQuestions = [
+//Quiz Questions
+const questions = [
     {
         question: "What is the first casino to open on the Las Vegas strip?",
         choices: ["Dunes", "Flamingo", "Stardust", "Riviera"],
