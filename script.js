@@ -30,6 +30,16 @@ choices.forEach((choice, index) => {
         } else {
             alert('Incorrect answer. The correct answer is: ' + correctAnswer);
         }
+
+        //Moves to the next question
+        questionIndex++;
+
+        //Check if all questions have ben answered
+        if (questionIndex < question.length) {
+            displayQuestion();
+        } else 
+        {alert('Game Over. Please deposit $500 to play again.');
+    }
     });
 });
 
