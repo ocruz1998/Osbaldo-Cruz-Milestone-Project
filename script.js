@@ -8,8 +8,8 @@ function displayQuestion() {
     
     // Display answer choices
     const choiceButtons = document.querySelectorAll('.choice');
-    choiceButtons.forEach((button, index) => {
-        button.textContent = currentQuestion.choices[index];
+    currentQuestion.choices.forEach((choice, index) => {
+        choiceButtons[index].textContent = choice;
     });
 }
 
@@ -20,10 +20,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const choices = document.querySelectorAll('.choice');
 
-choices.forEach((choice, index) => {
+choices.forEach((choice) => {
     choice.addEventListener('click', function() {
         const selectedAnswer = choice.textContent;
-        const correctAnswer = questions[index].correctAnswer;
+        const correctAnswer = questions[questionIndex].correctAnswer;
 
         if (selectedAnswer === correctAnswer) {
             alert('Correct answer!');
@@ -31,15 +31,15 @@ choices.forEach((choice, index) => {
             alert('Incorrect answer. The correct answer is: ' + correctAnswer);
         }
 
-        //Moves to the next question
+        // Move to the next question
         questionIndex++;
 
-        //Check if all questions have ben answered
-        if (questionIndex < question.length) {
+        // Check if all questions have been answered
+        if (questionIndex < questions.length) {
             displayQuestion();
-        } else 
-        {alert('Game Over. Please deposit $500 to play again.');
-    }
+        } else {
+            alert('Game Over. Please deposit $500 to play again.');
+        }
     });
 });
 
@@ -48,16 +48,13 @@ document.getElementById('submit').addEventListener('click', function() {
     alert('Answers submitted');
 });
 
-
-
-//Quiz Questions
+// Quiz Questions
 const questions = [
     {
         question: "What is the first casino to open on the Las Vegas strip?",
         choices: ["Dunes", "Flamingo", "Stardust", "Riviera"],
         correctAnswer: "Flamingo"
     },
-
     {
         question: "When was the Welcome to Las Vegas sign created?",
         choices: ["1956", "1957", "1958", "1959"],
@@ -68,17 +65,14 @@ const questions = [
         choices: ["Imperial Palace", "El Rancho", "Tangiers", "Aladdin"],
         correctAnswer: "Tangiers"
     },
-
     {
         question: "What was the first racially integrated casino in Las Vegas?",
         choices: ["El Cortez", "Moulin Rouge", "Stardust", "Desert Inn"],
         correctAnswer: "Moulin Rouge"
     },
-
     {
         question: "Are you drunk?",
         choices: ["Yes", "No", "Maybe?", "sdfsdlgjsd"],
         correctAnswer: "No"
     },
-]
-
+];
