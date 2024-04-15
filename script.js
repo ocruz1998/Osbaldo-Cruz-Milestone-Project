@@ -1,3 +1,5 @@
+///This code was assisted with ChatGPT and GreatStack's Quiz building walkthrough: https://www.youtube.com/watch?v=PBcqGxrr9g8
+
 let questionIndex = 0; // Index to track the current question
 
 function displayQuestion() {
@@ -43,10 +45,7 @@ choices.forEach((choice) => {
     });
 });
 
-document.getElementById('submit').addEventListener('click', function() {
-    // This is where you can handle the submission of answers
-    alert('Answers submitted');
-});
+
 
 // Quiz Questions
 const questions = [
