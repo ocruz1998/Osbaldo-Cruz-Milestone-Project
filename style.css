@@ -1,9 +1,20 @@
 /* This code was assisted with ChatGPT and GreatStack's Quiz building walkthrough: https://www.youtube.com/watch?v=PBcqGxrr9g8 */
 /* image referenced:https://pixabay.com/photos/las-vegas-nevada-cities-urban-1620961/ */
-.body {
-background-image: url 
+body {
+    background: #3e2e59;
+    font-family: Arial, sans-serif;
 }
 
 .quiz-container{
-    background: #FFB3CB
+ margin: 0 auto;
+ padding: 50px;
+ background-color: #ffffff;
+ max-width: 500px;
+ border-radius: 10px;
+
+ position: fixed;
+ top: 50%;
+ left: 50%;
+
+
 }
