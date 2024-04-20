@@ -89,4 +89,14 @@ const questions = [
         choices: ["Yes", "No", "Maybe?", "sdfsdlgjsd"],
         correctAnswer: "No"
     },
+    {
+        question: "Which casino got demolished in style?",
+        choices: ["Stardust", "Dunes", "Tropicana", "Desert Inn"],
+        correctAnswer: "Dunes"
+    },
+    {
+        question: "Which former casino now sits on Encore/Wynn?",
+        choices: ["Holiday Inn", "Thunderbird", "Desert Inn", "Hacienda"],
+        correctAnswer: "Desert Inn"
+    },
 ];
