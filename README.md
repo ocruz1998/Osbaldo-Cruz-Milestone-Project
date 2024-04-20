@@ -15,3 +15,10 @@ The web game is deployed at https://ocruz1998.github.io/
 ## Game Logic
 
 This is just a simple quiz game that challenges how much the user knows about Las Vegas history. There are various question and the user have four choices to go from. Upon choosing an answer, the JS code will determine if the choice chosen is correct. There will be track record of how many responses the user gets right and will determine the end quote at the end of the quiz. 
+
+### Post-MVP Plans
+Have images go along with the question boxes to increase user interactivity
+Have score board show off at the end of the quiz game
+Enter custom messages when receiving a correct/incorrect answer
+
+
