@@ -27,6 +27,8 @@ choices.forEach((choice) => {
     choice.addEventListener('click', function() {
         const selectedAnswer = choice.textContent;
         const correctAnswer = questions[questionIndex].correctAnswer;
+
+        let feedbackMessage = "";
         // const comment = questions[questionIndex].comments[selectedAnswer] || '';
 
         //Displays custom message based on the question and answer. Currently unable to get the code running at this time.
@@ -35,6 +37,7 @@ choices.forEach((choice) => {
 
         //Default Correct/Incorrect Message
         if (selectedAnswer === correctAnswer) {
+            score++; //Increments score for correct answers
             alert('Correct answer!');
         } else {
             alert('Incorrect answer. The correct answer is: ' + correctAnswer);
