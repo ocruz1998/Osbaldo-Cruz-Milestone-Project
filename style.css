@@ -1,8 +1,13 @@
-/* This code was assisted with ChatGPT and GreatStack's Quiz building walkthrough: https://www.youtube.com/watch?v=PBcqGxrr9g8 */
+/* This code was troubleshooted with ChatGPT and GreatStack's Quiz building walkthrough: https://www.youtube.com/watch?v=PBcqGxrr9g8 */
 /* image referenced:https://pixabay.com/photos/las-vegas-nevada-cities-urban-1620961/ */
 body {
     background: #3e2e59;
     font-family: Arial, sans-serif;
+    position: center;
+}
+
+#image {
+    background-size: auto;
 }
 
 .quiz-container{
