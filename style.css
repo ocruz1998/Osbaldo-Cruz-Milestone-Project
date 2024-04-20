@@ -15,6 +15,18 @@ body {
  position: fixed;
  top: 50%;
  left: 50%;
+ transform: translate(-50%, -50%)
 
+}
 
+.choices {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.choice {
+    flex: 0 0 calc(50% - 10px);
+    margin: 5px;
+    /* Add or modify button styles as needed */
 }
