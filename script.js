@@ -1,6 +1,7 @@
-///This code was assisted with ChatGPT and GreatStack's Quiz building walkthrough: https://www.youtube.com/watch?v=PBcqGxrr9g8
+///Code was Troublshooted using ChatGPT and GreatStack's Quiz building walkthrough: https://www.youtube.com/watch?v=PBcqGxrr9g8
 
 let questionIndex = 0; // Index to track the current question
+let score = 0; //Tracks user score
 
 function displayQuestion() {
     const currentQuestion = questions[questionIndex];
@@ -26,12 +27,20 @@ choices.forEach((choice) => {
     choice.addEventListener('click', function() {
         const selectedAnswer = choice.textContent;
         const correctAnswer = questions[questionIndex].correctAnswer;
+        // const comment = questions[questionIndex].comments[selectedAnswer] || '';
 
+        //Displays custom message based on the question and answer. Currently unable to get the code running at this time.
+        // let feedbackMessage = selectedAnswer === correctAnswer ? 'Correct answer' `Correct answer! ${comment.correct || ''}` : `Incorrect answer. The correct answer is: ${correctAnswer}. ${comment.incorrect || ''}`;
+        // alert(feedbackMessage)
+
+        //Default Correct/Incorrect Message
         if (selectedAnswer === correctAnswer) {
             alert('Correct answer!');
         } else {
             alert('Incorrect answer. The correct answer is: ' + correctAnswer);
         }
+
+        alert(feedbackMessage + ' Score: ' + score); //Shows Score Results
 
         // Move to the next question
         questionIndex++;
@@ -40,7 +49,7 @@ choices.forEach((choice) => {
         if (questionIndex < questions.length) {
             displayQuestion();
         } else {
-            alert('Game Over. Please deposit $500 to play again.');
+            alert('Your final score is: ' + score + '. Thank you for playing!');
         }
     });
 });
@@ -53,6 +62,9 @@ const questions = [
         question: "What is the first casino to open on the Las Vegas strip?",
         choices: ["Dunes", "Flamingo", "Stardust", "Riviera"],
         correctAnswer: "Flamingo"
+        // comments: {
+        //     "Dunes": incorrect :"The first casino to open on the Las Vegas Strip was the Flamingo. The casino opened in December 1946."
+        // }
     },
     {
         question: "When was the Welcome to Las Vegas sign created?",
